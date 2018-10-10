@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="entity.File" table="t_files">
+		<id name="id" column="id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="user" column="user" />
+		<property name="file" column="file" />
+		<property name="path" column="path" />
+		<property name="size" column="size" />
+		<property name="uploadTime" column="upload_time" />
+	</class> 
+</hibernate-mapping>

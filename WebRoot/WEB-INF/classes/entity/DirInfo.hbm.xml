@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="entity.DirInfo">
+        <id name="path" column="path" >
+            <generator class="assigned"/>
+        </id>
+		<property name="user" column="user" />
+		<property name="parentPath" column="parent_path" />
+		<property name="dir" column="dir" />
+		<property name="createTime" column="create_time"/>
+		<property name="count" column="count" />
+        <property name="size" column="size" />
+	</class>
+
+	<sql-query callable="true" name="myDirInfo">
+		<return alias="dirInfo" entity-name="entity.DirInfo">
+			<return-property name="user" column="user" />
+			<return-property name="path" column="path" />
+			<return-property name="parentPath" column="parent_path" />
+			<return-property name="dir" column="dir" />
+			<return-property name="createTime" column="create_time" />
+			<return-property name="count" column="count" />
+			<return-property name="size" column="size" />
+		</return>
+		{call p_dir_info(:user,:parentPath) }
+	</sql-query>
+
+</hibernate-mapping>
