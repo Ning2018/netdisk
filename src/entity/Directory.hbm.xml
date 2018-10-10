@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="entity.Directory" table="t_directories">
+		<id name="id" column="id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="user" column="user" />
+		<property name="path" column="path" />
+		<property name="parentPath" column="parent_path" />
+		<property name="dir" column="dir" />
+		<property name="createTime" column="create_time" />
+	</class>
+
+
+</hibernate-mapping>
